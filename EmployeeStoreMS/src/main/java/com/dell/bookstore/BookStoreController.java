@@ -10,8 +10,6 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dell.booksearch.Books;
-
 @RestController
 @RefreshScope
 public class BookStoreController {
@@ -25,14 +23,18 @@ public class BookStoreController {
 	@Value("${dell.store.message}")
 	String message;
 	
+	@Value("${dell.store.welcome}")
+	String welcome;
+	
 	Logger log = LoggerFactory.getLogger(BookStoreController.class);
 	
 	@GetMapping("/mybooks")
-	public Books getMyBooks() {
+	public List<String> getMyBooks() {
 		log.info("---BookStoreController---getMyBooks()---");
-		Books booksList = employeeSearchProxy.getAllBooks();
-		booksList.setMyport(myport);
-		booksList.setMessage(message);
+		List<String> booksList = employeeSearchProxy.getAllBooks();
+		booksList.add(myport);
+		booksList.add(message);
+		booksList.add(welcome);
 		return booksList;
 	}
 }

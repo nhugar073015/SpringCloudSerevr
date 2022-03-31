@@ -7,7 +7,6 @@ public class Books {
 	private List<String> booksList;
 	private String myport;
 	private String message;
-	private String welcome;
 	private String actualBookPrice;
 	private String offerInPerc;
 	private String offeredPrice;
@@ -28,12 +27,6 @@ public class Books {
 	}
 	public void setMessage(String message) {
 		this.message = message;
-	}
-	public String getWelcome() {
-		return welcome;
-	}
-	public void setWelcome(String welcome) {
-		this.welcome = welcome;
 	}
 	
 	public String getActualBookPrice() {

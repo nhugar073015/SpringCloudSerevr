@@ -23,10 +23,11 @@ public class BookSearchController {
 	String  Offer;
 	@Value("${dell.book.actual.value}")
 	String  actualPrice;
+	@Value("${dell.search.welcome}")
+	String welcome;
 
 	@GetMapping("/allbooks")
-	public Books getAllBooks() {
-		Books books = new Books();
+	public List<String> getAllBooks() {
 		log.info("---BookSearchController---getAllBooks()---");
 		log.info("---Port--- : " + myport);
 		log.info("---message--- : " + message);
@@ -34,12 +35,13 @@ public class BookSearchController {
 		booksList.add("1. Core Java");
 		booksList.add("2. Spring Boot");
 		booksList.add("3. Microservices");
-		books.setMyport("Port Number: "+myport);
-		books.setMessage("Message: "+message);
-		books.setActualBookPrice("Actual Price: "+actualPrice);
-		books.setOfferInPerc("Todays Offer:"+Offer+"%");
+		booksList.add("Port Number: "+myport);
+		booksList.add("Message: "+message);
+		booksList.add(welcome);
+		booksList.add("Actual Price: "+actualPrice);
+		booksList.add("Todays Offer:"+Offer+"%");
 		int offerPrice = ((100-Integer.parseInt(Offer))*Integer.parseInt(actualPrice))/100;
-		books.setOfferedPrice("*Offer Price*:"+offerPrice);
-		return books;
+		booksList.add("*Final Selling Price*:"+offerPrice);
+		return booksList;
 	}
 }
