@@ -34,10 +34,10 @@ public class BookSearchController {
 		booksList.add("1. Core Java");
 		booksList.add("2. Spring Boot");
 		booksList.add("3. Microservices");
-		books.setMyport(myport);
-		books.setMessage(message);
-		books.setOfferInPerc(Offer);
-		books.setActualBookPrice(actualPrice);
+		books.setMyport("Port Number: "+myport);
+		books.setMessage("Message: "+message);
+		books.setActualBookPrice("Actual Price: "+actualPrice);
+		books.setOfferInPerc("Todays Offer:"+Offer+"%");
 		int offerPrice = ((100-Integer.parseInt(Offer))*Integer.parseInt(actualPrice))/100;
 		books.setOfferedPrice("*Offer Price*:"+offerPrice);
 		return books;
