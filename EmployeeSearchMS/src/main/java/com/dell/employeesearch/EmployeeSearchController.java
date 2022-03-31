@@ -17,9 +17,9 @@ public class EmployeeSearchController {
 	Logger log = LoggerFactory.getLogger(EmployeeSearchController.class);
 	@Value("${server.port}")
 	String myport;
-	@Value("${jlc.search.message}")
+	@Value("${dell.search.message}")
 	String message;
-	@Value("${jlc.search.welcome}")
+	@Value("${dell.search.welcome}")
 	String welcome;
 
 	@GetMapping("/allbooks")

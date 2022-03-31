@@ -19,10 +19,10 @@ public class EmployeeStoreController {
 	@Value("${server.port}")
 	String myport;
 	
-	@Value("${jlc.store.message}")
+	@Value("${dell.store.message}")
 	String message;
 	
-	@Value("${jlc.store.welcome}")
+	@Value("${dell.store.welcome}")
 	String welcome;
 	
 	Logger log = LoggerFactory.getLogger(EmployeeStoreController.class);
