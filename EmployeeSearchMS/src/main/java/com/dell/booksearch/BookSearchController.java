@@ -1,4 +1,4 @@
-package com.dell.employeesearch;
+package com.dell.booksearch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,30 +12,34 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RefreshScope
-public class EmployeeSearchController {
+public class BookSearchController {
 
-	Logger log = LoggerFactory.getLogger(EmployeeSearchController.class);
+	Logger log = LoggerFactory.getLogger(BookSearchController.class);
 	@Value("${server.port}")
 	String myport;
 	@Value("${dell.search.message}")
 	String message;
-	@Value("${dell.search.welcome}")
-	String welcome;
+	@Value("${dell.book.offer}")
+	String  Offer;
+	@Value("${dell.book.actual.value}")
+	String  actualPrice;
 
 	@GetMapping("/allbooks")
-	public List<String> getAllBooks() {
+	public Books getAllBooks() {
+		Books books = new Books();
 		log.info("---BookSearchController---getAllBooks()---");
 		log.info("---Port--- : " + myport);
 		log.info("---message--- : " + message);
 		List<String> booksList = new ArrayList<String>();
-		booksList.add("Java");
-		booksList.add("Spring");
-		booksList.add("Spring Boot");
-		booksList.add("Angular");
-		booksList.add("React");
-		booksList.add(myport);
-		booksList.add(message);
-		booksList.add(welcome);
-		return booksList;
+		booksList.add("1. Core Java");
+		booksList.add("2. Spring Boot");
+		booksList.add("3. Microservices");
+		books.setMyport(myport);
+		books.setMessage(message);
+		books.setOfferInPerc(Offer);
+		books.setActualBookPrice(actualPrice);
+		int offerPrice = ((100-Integer.parseInt(Offer))*Integer.parseInt(actualPrice))/100;
+		books.setOfferedPrice("*Offer Price*:"+offerPrice);
+		return books;
 	}
 }

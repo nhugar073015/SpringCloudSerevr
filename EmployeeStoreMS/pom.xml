@@ -3,11 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.dell.employeestore</groupId>
-	<artifactId>EmployeeStoreMS</artifactId>
+	<groupId>com.dell.bookstore</groupId>
+	<artifactId>BookStoreMS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>EmployeeStoreMS</name>
-	<description>Employee Search  MS</description>
+	<name>BookStoreMS</name>
+	<description>Book Store  MS</description>
 	<properties>
 		<java.version>18</java.version>
 		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>

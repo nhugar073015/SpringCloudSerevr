@@ -1,14 +1,14 @@
-package com.dell.employeestore;
-
-import java.util.List;
+package com.dell.bookstore;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.dell.booksearch.Books;
+
 @FeignClient(name = "EmployeeSearchMS")
-public interface EmployeeSearchProxy {
+public interface BookSearchProxy {
 
 	@GetMapping("/allbooks")
-	public List<String> getAllBooks();
+	public Books getAllBooks();
 	
 }

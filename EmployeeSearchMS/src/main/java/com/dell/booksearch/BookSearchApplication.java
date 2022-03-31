@@ -1,4 +1,4 @@
-package com.dell.employeesearch;
+package com.dell.booksearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class EmployeeSearchMsApplication {
+public class BookSearchApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmployeeSearchMsApplication.class, args);
+		SpringApplication.run(BookSearchApplication.class, args);
 	}
 
 }
