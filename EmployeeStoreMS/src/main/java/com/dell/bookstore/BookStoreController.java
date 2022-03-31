@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookStoreController {
 	
 	@Autowired
-	BookSearchProxy employeeSearchProxy;
+	BookSearchProxy bookSearchProxy;
 	
 	@Value("${server.port}")
 	String myport;
@@ -31,7 +31,7 @@ public class BookStoreController {
 	@GetMapping("/mybooks")
 	public List<String> getMyBooks() {
 		log.info("---BookStoreController---getMyBooks()---");
-		List<String> booksList = employeeSearchProxy.getAllBooks();
+		List<String> booksList = bookSearchProxy.getAllBooks();
 		booksList.add(myport);
 		booksList.add(message);
 		booksList.add(welcome);
