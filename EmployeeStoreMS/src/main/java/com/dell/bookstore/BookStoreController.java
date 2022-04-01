@@ -26,15 +26,26 @@ public class BookStoreController {
 	@Value("${dell.store.welcome}")
 	String welcome;
 	
+	@Value("${dell.book.offer}")
+	String  Offer;
+	
+	@Value("${dell.book.actual.value}")
+	String  actualPrice;
+	
 	Logger log = LoggerFactory.getLogger(BookStoreController.class);
 	
 	@GetMapping("/mybooks")
 	public List<String> getMyBooks() {
 		log.info("---BookStoreController---getMyBooks()---");
 		List<String> booksList = bookSearchProxy.getAllBooks();
-		booksList.add(myport);
-		booksList.add(message);
-		booksList.add(welcome);
+		booksList.add("---------------------------------------------");
+		booksList.add("BookStore Port: "+myport);
+		booksList.add("BookStore Message: "+ message);
+		booksList.add("BookStore Welcome Message: "+welcome);
+		booksList.add("Actual Book Price: "+actualPrice);
+		booksList.add("Todays Offer:"+Offer+"%");
+		int offerPrice = ((100-Integer.parseInt(Offer))*Integer.parseInt(actualPrice))/100;
+		booksList.add("Final Selling Price:"+offerPrice);
 		return booksList;
 	}
 }
