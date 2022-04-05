@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(name = "BookSearchMS")
 public interface BookSearchProxy {
 
-	@GetMapping("/allbooks")
+	@GetMapping("/getAllBooks")
 	public List<String> getAllBooks();
 	
 }
