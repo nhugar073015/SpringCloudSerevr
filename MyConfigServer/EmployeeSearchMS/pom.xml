@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dell.employeesearch</groupId>
-	<artifactId>EmployeeSearchMS</artifactId>
+	<artifactId>BookSearchMS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>EmployeeSearchMS</name>
+	<name>BookSearchMS</name>
 	<description>Employee Search  MS</description>
 	<properties>
 		<java.version>18</java.version>
