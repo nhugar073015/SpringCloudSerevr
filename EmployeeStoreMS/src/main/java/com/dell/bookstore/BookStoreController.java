@@ -34,7 +34,7 @@ public class BookStoreController {
 	
 	Logger log = LoggerFactory.getLogger(BookStoreController.class);
 	
-	@GetMapping("/mybooks")
+	@GetMapping("/getMyBooks")
 	public List<String> getMyBooks() {
 		log.info("---BookStoreController---getMyBooks()---");
 		List<String> booksList = bookSearchProxy.getAllBooks();

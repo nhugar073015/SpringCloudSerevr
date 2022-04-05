@@ -26,7 +26,7 @@ public class BookSearchController {
 	@Value("${dell.search.welcome}")
 	String welcome;
 
-	@GetMapping("/allbooks")
+	@GetMapping("/getAllBooks")
 	public List<String> getAllBooks() {
 		log.info("---BookSearchController---getAllBooks()---");
 		log.info("---Port--- : " + myport);
