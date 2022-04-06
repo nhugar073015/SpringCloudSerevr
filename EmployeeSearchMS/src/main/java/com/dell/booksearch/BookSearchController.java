@@ -37,8 +37,8 @@ public class BookSearchController {
 		booksList.add("3. Microservices");
 		booksList.add("------------------------------------");
 		booksList.add("BookSearch Port: "+myport);
-		booksList.add("BookSearch Message: "+message);
 		booksList.add("BookSearch Welcome Message: "+welcome);
+		booksList.add("BookSearch Message: "+message);
 		booksList.add("Actual Book Price: "+actualPrice);
 		booksList.add("Todays Offer:"+Offer+"%");
 		int offerPrice = ((100-Integer.parseInt(Offer))*Integer.parseInt(actualPrice))/100;

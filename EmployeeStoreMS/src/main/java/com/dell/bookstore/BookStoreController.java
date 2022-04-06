@@ -40,8 +40,8 @@ public class BookStoreController {
 		List<String> booksList = bookSearchProxy.getAllBooks();
 		booksList.add("---------------------------------------------");
 		booksList.add("BookStore Port: "+myport);
-		booksList.add("BookStore Message: "+ message);
 		booksList.add("BookStore Welcome Message: "+welcome);
+		booksList.add("BookStore Message: "+ message);
 		booksList.add("Actual Book Price: "+actualPrice);
 		booksList.add("Todays Offer:"+Offer+"%");
 		int offerPrice = ((100-Integer.parseInt(Offer))*Integer.parseInt(actualPrice))/100;
